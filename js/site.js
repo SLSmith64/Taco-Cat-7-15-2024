@@ -48,7 +48,7 @@ function specialCheck(checkPali)
 
 }
 
-//Function 3 Reverse a String logic/Calculation
+//Function 4 Reverse a String logic/Calculation
 function reverseString(Pali){
 
     let reversePali = "";
@@ -60,24 +60,34 @@ function reverseString(Pali){
     return reversePali;
 }
 
-//Function 4 displayResults
+//Function 5 displayResults
 //Display a message to the user to show whether their string is a palindrome or not.
 function displayResults(inputPali, reversePali, isPalindrome){   
 
+    // document.getElementById("paliAlert").classlist.remove("paliAlert");
+    // document.getElementById("paliAlertBad").classlist.remove("paliAlertBad");
+    
+    let paliAlert = document.getElementById("paliAlert");
+    
+    paliAlert.style.opacity = 1;
+
     if(isPalindrome == true){
 
-        let paliAlert = document.getElementById("paliAlert");
+        
+        paliAlert.classList.add('alert-success');
+        paliAlert.classList.remove('alert-danger');
 
         //Success Message to User
         paliAlert.innerHTML = `<div">Well Done! You Entered a Palindrome</div><hr>
-        <div>Your phrase reversed is: ${reversePali}</div>`;
+        <div>Your phrase reversed is: ${reversePali}</div>`;        
 
-    }else{
+    }else{       
         
-        let paliAlertBad = document.getElementById("paliAlertBad");
+        paliAlert.classList.add('alert-danger');
+        paliAlert.classList.remove('alert-success');
 
         //Failure Message to User
-        paliAlertBad.innerHTML = `<div>Sorry! You did not enter a Palindrome</div><hr> <div>Your phrase reversed is: ${reversePali}</div>`;
+        paliAlert.innerHTML = `<div>Sorry! You did not enter a Palindrome</div><hr> <div>Your phrase reversed is: ${reversePali}</div>`;
 
     }   
 }

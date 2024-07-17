@@ -68,8 +68,8 @@ nav{
 }
 
 .appLogo{
-
     max-width: 400px;
+    background-color: yellowgreen;
 }
 
 .mainTitle{
@@ -95,5 +95,10 @@ footer i{
 
 footer i:hover{
     color: var(--cf-theme-200);
+}
+
+#paliAlert{
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
 }
 
